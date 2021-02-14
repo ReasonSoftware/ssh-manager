@@ -213,4 +213,4 @@ groupdel ssh-manager-sudoers
 
 ## License
 
-[Apache-2.0](LICENSE.md) © 2021 Reason Cybersecurity Ltd.
+[Apache-2.0](LICENSE.md) © 2021 [Reason Cybersecurity Ltd.](https://www.reasonsecurity.com/)
