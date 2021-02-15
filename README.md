@@ -25,7 +25,7 @@
     - Complete [Server Configuration](#server-configuration)
     - [Install](#installation) the service
 
-*It is strongly recommended to update the service once in a while*
+*It is strongly recommended updating the service once in a while*
 
 ### Central Configuration
 
@@ -119,7 +119,7 @@ groups:
 
 ### Installation
 
-- Download installation script: `curl https://raw.githubusercontent.com/ReasonSoftware/ssh-manager/main/scripts/install.sh --output install.sh`
+- Download installation script: `curl https://raw.githubusercontent.com/ReasonSoftware/ssh-manager/master/scripts/install.sh --output install.sh`
 - Execute with elevated privileges: `sudo bash install.sh`
 
 <details><summary>:information_source: Manual Installation</summary>
