@@ -16,7 +16,7 @@ import (
 
 const (
 	// Version of an application
-	Version string = "2.0.0"
+	Version string = "1.0.1"
 	// AppDir contains an home dir for an application files
 	AppDir string = "/var/lib/ssh-manager"
 	// StateFile contains a filename of a state file
