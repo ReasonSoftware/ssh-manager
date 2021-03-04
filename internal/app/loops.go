@@ -17,7 +17,7 @@ USERS:
 				}
 
 				if result {
-					log.Infof("updated user %v public key", user)
+					log.Infof("updated public key for user: %v", user)
 				}
 
 				continue USERS
@@ -62,7 +62,7 @@ SUDOERS:
 				}
 
 				if result {
-					log.Infof("updated user %v public key", sudoer)
+					log.Infof("updated public key for user: %v", sudoer)
 				}
 
 				continue SUDOERS
