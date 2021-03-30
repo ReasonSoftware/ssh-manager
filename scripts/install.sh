@@ -39,7 +39,7 @@ After=network-online.target
 
 [Timer]
 Unit=ssh-manager.service
-OnBootSec=10min
+OnBootSec=1min
 OnUnitInactiveSec=60min
 Persistent=true
 
