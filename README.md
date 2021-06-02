@@ -22,8 +22,8 @@
 
 - Prepare [Central Configuration](#central-configuration) once
 - Add new servers by:
-    - Complete [Server Configuration](#server-configuration)
-    - [Install](#installation) the service
+  - Complete [Server Configuration](#server-configuration)
+  - [Install](#installation) the service
 
 *It is strongly recommended updating the service once in a while*
 
@@ -102,17 +102,17 @@
 
 1. Create a local configuration file `/root/ssh-manager.yml`
 
-```yaml
-secret_name: ssh-manager
-region: us-west-1
-groups:
-  - devops
-  - poc
-```
+    ```yaml
+    secret_name: ssh-manager
+    region: us-west-1
+    groups:
+      - devops
+      - poc
+    ```
 
-- `secret_name` (required) - AWS Secret name with a central configuration
-- `region` - AWS region where a Secret is stored. Default **us-east-1**
-- `groups` (required) - a list of server group names from a central configuration
+    - `secret_name` (required) - AWS Secret name with a central configuration
+    - `region` - AWS region where a Secret is stored. Default **us-east-1**
+    - `groups` (required) - a list of server group names from a central configuration
 
 2. Create and attach an IAM Roles or configure an IAM User to allow EC2's to fetch the secret.
     - If using User Authentication, configure the credentials for root user.
@@ -128,39 +128,39 @@ groups:
 - Download latest [release](https://github.com/ReasonSoftware/ssh-manager/releases/latest) unzip to `/var/lib/ssh-manager`
 - Create **systemd** service under `/etc/systemd/system/ssh-manager.service` with the following content:
 
-```
-[Unit]
-Description=Central SSH Management Service for AWS Linux EC2
-Wants=network-online.target
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=/var/lib/ssh-manager/ssh-manager
-StandardOutput=journal
-User=root
-
-[Install]
-WantedBy=multi-user.target
-```
+    ```
+    [Unit]
+    Description=Central SSH Management Service for AWS Linux EC2
+    Wants=network-online.target
+    After=network-online.target
+    
+    [Service]
+    Type=oneshot
+    ExecStart=/var/lib/ssh-manager/ssh-manager
+    StandardOutput=journal
+    User=root
+    
+    [Install]
+    WantedBy=multi-user.target
+    ```
 
 - Create **systemd** timer under `/etc/systemd/system/ssh-manager.timer` with the following content:
 
-```
-[Unit]
-Description=Timer for Central SSH Management Service
-Wants=network-online.target
-After=network-online.target
+    ```
+    [Unit]
+    Description=Timer for Central SSH Management Service
+    Wants=network-online.target
+    After=network-online.target
 
-[Timer]
-Unit=ssh-manager.service
-OnBootSec=10min
-OnUnitInactiveSec=60min
-Persistent=true
+    [Timer]
+    Unit=ssh-manager.service
+    OnBootSec=10min
+    OnUnitInactiveSec=60min
+    Persistent=true
 
-[Install]
-WantedBy=multi-user.target
-```
+    [Install]
+    WantedBy=multi-user.target
+    ```
 
 - Reload **systemd** configuration: `systemctl daemon-reload`
 - Enable **ssh-manager** service: `systemctl enable ssh-manager.service`
@@ -180,18 +180,18 @@ Decide what are you going to do with the users and either delete them (`userdel 
 
 - Delete systemd service and timer:
 
-```shell
-systemctl stop ssh-manager.service
-systemctl stop ssh-manager.timer
-rm -f /etc/systemd/system/ssh-manager.*
-```
+    ```shell
+    systemctl stop ssh-manager.service
+    systemctl stop ssh-manager.timer
+    rm -f /etc/systemd/system/ssh-manager.*
+    ```
 
 - Delete application groups:
 
-```shell
-groupdel ssh-manager-users
-groupdel ssh-manager-sudoers
-```
+    ```shell
+    groupdel ssh-manager-users
+    groupdel ssh-manager-sudoers
+    ```
 
 - Remove `%ssh-manager-sudoers ALL=(ALL) NOPASSWD: ALL` entry from `/etc/sudoers` file
 - Delete app directory `rm -rf /var/lib/ssh-manager`

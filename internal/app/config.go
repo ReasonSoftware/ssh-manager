@@ -8,6 +8,9 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Version contains current application version
+const Version string = "1.0.4"
+
 // Config represents a remote configuration
 type Config struct {
 	Users        map[string]string   `json:"users"`
