@@ -39,10 +39,8 @@ jobs:
         run: zip ssh-manager.zip ssh-manager LICENSE.md
 
       - name: Release
-        uses: docker://antonyurchenko/git-release:latest
+        uses: docker://antonyurchenko/git-release:v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CHANGELOG_FILE: "CHANGELOG.md"
-          ALLOW_TAG_PREFIX: "true"
         with:
           args: ssh-manager.zip
