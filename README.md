@@ -120,6 +120,7 @@
 ### Installation
 
 - Download installation script: `curl https://raw.githubusercontent.com/ReasonSoftware/ssh-manager/master/scripts/install.sh --output install.sh`
+    - Alternative script that relies on **crontab**: `curl https://raw.githubusercontent.com/ReasonSoftware/ssh-manager/master/scripts/install_cronjob.sh --output install.sh`
 - Execute with elevated privileges: `sudo bash install.sh`
 
 <details><summary>:information_source: Manual Installation</summary>

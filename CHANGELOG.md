@@ -1,3 +1,13 @@
+# Changelog
+
+## [1.0.6] - 2021-07-28
+## Changed
+- Updated dependencies
+- Change Go module name and update imports
+
+## Added
+- Installation script for machines without **systemd** that relies on **crontab**
+
 ## [1.0.5] - 2021-07-05
 ## Changed
 - Updated dependencies
@@ -25,6 +35,7 @@
 ## [1.0.0] - 2021-02-10
 - First release
 
+[1.0.6]: https://github.com/ReasonSoftware/ssh-manager/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/ReasonSoftware/ssh-manager/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/ReasonSoftware/ssh-manager/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/ReasonSoftware/ssh-manager/compare/v1.0.2...v1.0.3
