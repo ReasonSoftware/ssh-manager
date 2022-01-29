@@ -17,6 +17,7 @@
 - Only public SSH key is used, private key never leave user's workstation
 - Leverage AWS IAM for service authentication
 - SystemD Service
+- Supports AMD64/ARM64
 
 ## Manual
 
@@ -119,8 +120,8 @@
 
 ### Installation
 
-- Download installation script: `curl https://raw.githubusercontent.com/ReasonSoftware/ssh-manager/master/scripts/install.sh --output install.sh`
-    - Alternative script that relies on **crontab**: `curl https://raw.githubusercontent.com/ReasonSoftware/ssh-manager/master/scripts/install_cronjob.sh --output install.sh`
+- Download installation script: `curl https://raw.githubusercontent.com/ReasonSoftware/ssh-manager/master/scripts/install.sh --output install.sh` (or `install_arm64.sh`)
+    - Alternative script that relies on **crontab**: `curl https://raw.githubusercontent.com/ReasonSoftware/ssh-manager/master/scripts/install_cronjob.sh --output install.sh` (or `install_cronjob_arm64.sh`)
 - Execute with elevated privileges: `sudo bash install.sh`
 
 <details><summary>:information_source: Manual Installation</summary>

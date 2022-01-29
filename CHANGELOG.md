@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0] - 2022-01-29
+## Added
+- Support ARM64 architecture
+
+## Changed
+- Updated dependencies
+
 ## [1.0.6] - 2021-07-28
 ## Changed
 - Updated dependencies
@@ -35,6 +42,7 @@
 ## [1.0.0] - 2021-02-10
 - First release
 
+[1.1.0]: https://github.com/ReasonSoftware/ssh-manager/compare/v1.0.6...v1.1.0
 [1.0.6]: https://github.com/ReasonSoftware/ssh-manager/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/ReasonSoftware/ssh-manager/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/ReasonSoftware/ssh-manager/compare/v1.0.3...v1.0.4

@@ -32,15 +32,23 @@ jobs:
       - name: Test
         run: go test -v $(go list ./... | grep -v vendor | grep -v mocks) -race -coverprofile=coverage.txt -covermode=atomic
 
-      - name: Build
-        run: GOOS=linux GOARCH=amd64 go build -o ssh-manager
+      - name: Build AMD64
+        run: |
+          GOOS=linux GOARCH=amd64 go build -o ssh-manager
+          zip ssh-manager-linux-amd64.zip ssh-manager LICENSE.md
+          rm -f ssh-manager
 
-      - name: Pack
-        run: zip ssh-manager.zip ssh-manager LICENSE.md
+      - name: Build ARM64
+        run: |
+          GOOS=linux GOARCH=arm64 go build -o ssh-manager
+          zip ssh-manager-linux-arm64.zip ssh-manager LICENSE.md
+          rm -f ssh-manager
 
       - name: Release
         uses: docker://antonyurchenko/git-release:v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: ssh-manager.zip
+          args: |
+            ssh-manager-linux-amd64.zip
+            ssh-manager-linux-arm64.zip

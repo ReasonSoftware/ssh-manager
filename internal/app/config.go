@@ -9,7 +9,7 @@ import (
 )
 
 // Version contains current application version
-const Version string = "1.0.6"
+const Version string = "1.1.0"
 
 // Config represents a remote configuration
 type Config struct {

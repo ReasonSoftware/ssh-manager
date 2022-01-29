@@ -6,7 +6,7 @@ mkdir -p /var/lib/ssh-manager
 
 wget $(curl -si https://api.github.com/repos/ReasonSoftware/ssh-manager/releases/latest | \
         grep browser_download_url | \
-        grep linux-amd64 | \
+        grep linux-arm64 | \
         awk -F': ' '{print $2}' | \
         tr -d '"') -O /var/lib/ssh-manager/ssh-manager.zip
 
