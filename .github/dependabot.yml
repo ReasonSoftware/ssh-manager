@@ -1,29 +1,27 @@
 version: 2
 updates:
-  - package-ecosystem: gomod
+  - package-ecosystem: "gomod"
     directory: "/"
     schedule:
-      interval: daily
-    assignees:
-      - anton-yurchenko
+      interval: "monthly"
+    reviewers:
+      - "ReasonSoftware/devops"
     labels:
-      - dependencies
+      - "dependencies"
     ignore:
       - dependency-name: "*"
-        update-types: [
-          "version-update:semver-patch"
-        ]
+        update-types: ["version-update:semver-patch"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: daily
-    target-branch: main
-    assignees:
-      - anton-yurchenko
+      interval: "monthly"
+    reviewers:
+      - "ReasonSoftware/devops"
     ignore:
       - dependency-name: "*"
         update-types: [
           "version-update:semver-minor",
           "version-update:semver-patch"
         ]
+
